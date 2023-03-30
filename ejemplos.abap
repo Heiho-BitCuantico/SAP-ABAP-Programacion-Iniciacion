@@ -241,6 +241,61 @@ WRITE:  / 'La cantidad es: ', lv_cantidad.
 
 
 
+*WorkArea.
+
+*En ABAP, wa_ y gt_ son prefijos utilizados para nombrar variables de ciertos tipos de datos.
+
+*    wa_: Este prefijo se utiliza para nombrar variables de tipo "work area". 
+*Una work area es una estructura de datos que se utiliza para procesar una única fila
+* de datos en una tabla o vista de base de datos.
+
+*Por ejemplo, si se tiene una tabla de empleados llamada zemployee, se podría declarar una work
+* area llamada wa_zemployee para procesar una fila individual de la tabla, y una tabla llamada
+* gt_zemployee para almacenar múltiples filas de datos.
+
+
+TYPES:  BEGIN OF t_employee,
+            employee_id     TYPE i,
+            nombre          TYPE string,
+            apellido        TYPE string,
+            departamento    TYPE string,
+        END OF t_employee.
+
+
+DATA: wa_employee TYPE t_employee.
+
+wa_employee-employee_id     = '123'.
+wa_employee-nombre          = 'Juan'.
+wa_employee-apellido        = 'Perez'.
+wa_employee-departamento    = 'IT'.
+
+WRITE:  / 'Id de empleado: ', wa_employee-employee_id,
+        / 'Nombre: ', wa_employee-nombre,
+        / 'Apellido: ', wa_employee-apellido,
+        / 'departamento: ', wa_employee-departamento.
+
+*En este ejemplo, se define una estructura de datos "t_employee" que contiene información sobre los empleados,
+* como su identificación, nombre, apellido y departamento. Luego, se declara una variable "wa_employee" de tipo
+* "t_employee" que se utiliza como un área de trabajo temporal para almacenar un registro completo de un empleado.
+
+*Después de eso, se asignan valores a los campos de la variable "wa_employee" y se muestra la información en la
+* pantalla utilizando la sentencia WRITE.        
+
+*Global Table
+
+*En ABAP, "gt_" es un prefijo que se utiliza para nombrar tablas internas, es decir, estructuras
+* de datos que almacenan información en memoria durante la ejecución del programa.
+* "gt_" significa "global table", lo que indica que la tabla interna se utiliza en todo el programa
+* o en varias partes del mismo.
+
+*Por ejemplo, si un programa necesita almacenar y procesar una lista de empleados, se puede crear
+* una tabla interna llamada "gt_employee" que contenga la información de los empleados en memoria.
+* Luego, el programa puede leer y manipular los datos de la tabla interna según sea necesario durante
+* la ejecución del programa.
+
+
+
+
 * Constantes
 
 CONSTANTS <nombre_constante> TYPE <tipo_dato> VALUE <valor_constante>.
@@ -262,3 +317,5 @@ CONSTANTS   c_nombre_tipo_paso TYPE string VALUE 'PASO',
 *Las constantes en ABAP se utilizan para representar valores que no cambiarán durante la ejecución del programa.
 * Al igual que las variables, las constantes también se utilizan para almacenar valores en la memoria del programa,
 * pero a diferencia de las variables, su valor no se puede cambiar una vez que se han definido.            
+
+
