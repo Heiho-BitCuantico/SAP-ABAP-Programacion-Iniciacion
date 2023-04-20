@@ -1,4 +1,6 @@
-    El curso SAP ABAP Programación Iniciación tiene la intención de adentrarle en la programación ABAP, uno de los lenguajes más demandados en el mercado laboral.
+Curso impartido por Gheorghe Valer de Logali Group.
+
+El curso SAP ABAP Programación Iniciación tiene la intención de adentrarle en la programación ABAP, uno de los lenguajes más demandados en el mercado laboral.
 
     La enseñanza comienza con los elementos básicos de la programación, con los tipos de datos básicos presentando las variables de tipo completo e incompleto.
 
